@@ -140,6 +140,7 @@ try {
                             <td>
                                 <form method="post" action="gerar_quotas_process.php" style="display:inline">
                                     <input type="hidden" name="ids[]" value="<?= $a1['id'] ?>">
+                                    <input type="hidden" name="ano" value="<?= $selectedYear ?>">
                                     <button type="submit" title="Gerar Quotas">
                                         <i class="fa-solid fa-file" aria-hidden="true"></i>
                                     </button>
@@ -156,6 +157,7 @@ try {
                                 <td>
                                     <form method="post" action="gerar_quotas_process.php" style="display:inline">
                                         <input type="hidden" name="ids[]" value="<?= $a2['id'] ?>">
+                                        <input type="hidden" name="ano" value="<?= $selectedYear ?>">
                                         <button type="submit" title="Gerar Quotas">
                                         <i class="fa-solid fa-file" aria-hidden="true"></i>
                                     </button>

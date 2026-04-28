@@ -23,11 +23,7 @@ if (!empty($associacao['logotipo'])) {
 }
 
 // Definir Ano para as quotas (recebido do formulário, ou ano actual por omissão)
-$anoActual = date('Y');
-if (isset($_POST['ano']) && ctype_digit((string)$_POST['ano'])) {
-    $anoActual = intval($_POST['ano']);
-}
-
+    $anoActual = isset($_POST['ano']) ? intval($_POST['ano']) : intval(date('Y'));
 // Processamento principal — aceita POST com ids[]
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['ids']) && is_array($_POST['ids'])) {
     $ids = array_map('intval', $_POST['ids']);

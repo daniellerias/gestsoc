@@ -5,6 +5,13 @@ if ($INSTALLER_MODE) {
     header("Location: install.php");
     exit;
 }
+
+$MAINTENANCE_MODE = true; // true = modo instalador ativo, false = modo aplicação ativo
+if ($MAINTENANCE_MODE) {
+    header("Location: manutencao.html");
+    exit;
+}
+
 //Mostrar erros (DEBUG)
 $MOSTRAR_ERROS = true;
 
