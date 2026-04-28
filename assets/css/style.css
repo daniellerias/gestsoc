@@ -1,0 +1,788 @@
+/* === IMPORT ROBOTO FONT === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+/* === RESET === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+
+/* === GLOBAL COLORS === */
+:root {
+  --color-primary: #ffd900;
+  --color-secondary: #0d1560;
+  --color-accent: #0069d3;
+  --color-bg: #ffffff;
+  --color-text: #1d1d1d;
+  --color-muted: #777;
+  --color-link: #000000;
+  --color-link-white: #ffffff;
+  --color-border: #ddd;
+  --color-emdia: #468246;
+  --color-ematraso: #bfa100;
+  --color-lightgrey: #f5f5f5;
+  --color-bg-footer: #000000;
+  --color-bg-navbar: #000000;
+  --color-footer-text: #ffffff;
+  
+}
+
+
+/* === TYPOGRAPHY === */
+h1 {
+  font-weight: 700;
+  font-size: 2em;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  color: var(--color-text);
+  padding-bottom: 1rem;
+}
+
+p {
+  color: var(--color-text);
+}
+
+a {
+    font-style: normal;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+
+    text-decoration: none;
+}
+
+
+/* === LAYOUT HELPERS === */
+
+.menu-logo-mobile {
+  display: none;
+}
+
+.login-body {
+background-color: #ffffff;
+opacity: 1;
+background-size: 7px 7px;
+background-image: repeating-linear-gradient(45deg, #f3f3f3 0, #f3f3f3 0.7000000000000001px, #ffffff 0, #ffffff 50%);
+}
+
+.container {
+    display: block;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 120px;
+    padding-bottom: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.numero_socio {
+    display: inline-block;
+    padding-left: 0.85em;
+    font-size: 0.85em;
+    color: var(--color-muted);
+}
+
+.alert {
+    display: block;
+    color: var(--color-text);
+    font-size: 0.85em;
+    font-weight: 400;
+    padding: 10px;
+    border: solid 2px red;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.info {
+    display: block;
+    color: var(--color-text);
+    background-color: #f5f5f5;
+    font-size: 0.85em;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.spacer {
+  display: block;
+  width: 100%;
+  height: 65px;
+}
+
+
+/* === BUTTONS === */
+
+button {
+  display: inline-block;
+  padding: 0.85em;
+  background-color: transparent;
+  color: #000000;
+  border: solid 1px var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-border);
+}
+
+.actions_buttons {
+  display: flex;
+  flex-direction: row-reverse; 
+}
+
+.section_button {
+  display: inline-block;
+  padding: 0.85em 1.2em;
+  background-color: var(--color-bg-navbar);
+  color: #ffffff;
+  border: solid 1px var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.section_button i {
+  color: var(--color-primary);
+  margin-right: 6px;
+}
+
+.section_button:hover {
+  color: var(--color-link);
+  background-color: var(--color-bg);
+}
+
+.section_button:hover i{
+  color: var(--color-link);
+}
+
+.section_button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.checkbox-buttons {
+  float: right;
+}
+
+
+/* === FORMS === */
+input, textarea, select {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 1rem;
+  padding: 0.5em;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.container form[method="get"] {
+  display: flex;
+  align-items: center;
+}
+.container form[method="get"] label {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.container form[method="get"] input,
+.container form[method="get"] select,
+.container form[method="get"] textarea {
+  margin-bottom: 0;
+}
+
+.socio-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.socio-form form {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.socio-form label,
+.socio-form input,
+.socio-form select,
+.socio-form textarea {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.socio-form div[style*="display:flex"] {
+  gap: 0;
+}
+
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+
+/* === MENU STYLES === */
+#menu {
+  width: 100%;
+  background-color: var(--color-bg-navbar);
+  padding: 1em;
+  box-shadow: #444 0px 2px 4px;
+  display: block;
+  position: fixed;
+  z-index: 999;
+}
+
+.navbar {
+  color: var(--color-link-white);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.navbar a {
+  color: var(--color-link-white);
+}
+
+.navbar a :active {
+  color: var(--color-primary);
+}
+
+.navbar i a {
+  font-size: 1.2em;
+  color: var(--color-link-white);
+  margin-right: 20px;
+}
+
+.navbar i a :active {
+  color: var(--color-primary);
+}
+
+.navbar-home {
+  font-size: 1.2em;
+  color: var(--color-link-white);
+}
+
+.session-menu {
+  float: right;
+  font-size: 1em;
+  color: var(--color-primary);
+}
+
+.session-menu a {
+  font-size: 1em;
+  color: var(--color-link-white);
+}
+
+
+/* === DROPDOWN MENU STYLES === */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: var(--color-bg-navbar);
+  color: #ffffff;
+  padding: 10px 16px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.dropbtn i {
+  margin-left: 6px;
+}
+
+.dropbtn-home {
+  background-color: var(--color-bg-navbar);
+  color: #ffffff;
+  padding: 10px 16px;
+  font-size: 1.2em;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #222;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+}
+
+.dropdown-content a:hover {
+  background-color: #444;
+  color: #ffd900;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #222;
+  color: #ffd900;
+}
+
+
+/* === MENU ACTIVE STYLES === */
+.navbar a.active,
+.navbar a.menu-active,
+.navbar a.menu-item-active,
+.dropdown-content a.active,
+.dropdown-content a.menu-active,
+.dropdown-content a.menu-item-active {
+  background: var(--color-primary);
+  color: var(--color-bg-navbar) !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-decoration: none;
+}
+
+.dropbtn-home a.active {
+  background: none !important;
+  color: inherit !important;
+}
+.dropbtn-home a.active i {
+  color: var(--color-primary) !important;
+}
+
+/* Exceção: navbar-home só o ícone fica amarelo quando ativo */
+.navbar-home a.active,
+.navbar-home a.menu-active,
+.navbar-home a.menu-item-active {
+  background: none !important;
+  color: inherit !important;
+}
+.navbar-home a.active i,
+.navbar-home a.menu-active i,
+.navbar-home a.menu-item-active i {
+  color: var(--color-primary) !important;
+}
+
+/* === FOOTER STYLES === */
+.footer-content {
+    display: block;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    padding: 10px;
+    min-height: 60px;
+    background-color: var(--color-bg-footer);
+    font-size: 1em;
+    color: var(--color-footer-text);
+    text-align: center;
+    z-index: 999;
+    box-shadow: 0px -2px 4px #444;
+}
+
+.footer-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-content p {
+    color: var(--color-footer-text);
+    font-size: 0.9em;
+}
+
+/* === TABLE STYLES === */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9em;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 1em;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border); 
+}
+
+th {
+  background-color: var(--color-lightgrey);
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+tbody tr:hover {
+  background-color: var(--color-lightgrey);
+}
+
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.col-small { width: 8%; }
+.col-medium { width: 15%; }
+.col-actions { width: 10%; text-align: right; }
+
+.sidebyside-table th:nth-child(4),
+.sidebyside-table td:nth-child(4) {
+  border-left: 2px solid var(--color-border);
+}
+
+
+/* === LOGIN === */
+.full-vertical {
+  margin-top: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login {
+  display: block;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.login h1 {
+  padding-top: 0.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+
+.login h2 {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.login form {
+  display: inline-block;
+  text-align: left;
+  margin-top: 1rem;
+  padding-right: 5px;
+}
+
+.login form label {
+  margin-bottom: 0.5em;
+}
+
+.login form input {
+  width: 100%;
+  max-width: 300px;
+}
+
+.login form button {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+/* === MOBILE === */
+
+@media screen and (max-width: 768px) {
+  
+  .full-vertical {
+    margin-top: 0;
+    padding: 1rem;
+    min-height: calc(100vh - 120px);
+  }
+
+  .login {
+    width: 100%;
+    max-width: 420px;
+    padding: 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin: 0 auto;
+  }
+
+  .login h1 { font-size: 1.5rem; }
+  .login form { width: 100%; }
+  .login form input { max-width: 100%; }
+
+  .actions_buttons { flex-direction: row; gap: 0.5rem; }
+
+  .footer-content { border-top: none; display: flex; justify-content: center; align-items: center; flex-direction: column; }
+
+  table, th, td { font-size: 0.9em; }
+
+  .container { max-width: 96%; padding: 0.75rem; }
+
+  table { display: block; overflow-x: auto; white-space: nowrap;  }
+
+  .voltar-topo-btn { right: 16px; bottom: 90px; padding: 10px 16px; font-size: 1rem; }
+
+  #menu { display: flex; align-items: center; gap: 0.5rem; padding: 8px; position: relative; }
+  #menu .dropdown { display: none; }
+  #menu .session-menu { display: none; }
+  #menu a { display: none; }
+
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; background: transparent; border: none; cursor: pointer; }
+
+  /* Hide Configurações menu entirely on mobile (both closed and open states) */
+  #menu > .dropdown:first-of-type { display: none !important; }
+  #menu.open > .dropdown:first-of-type { display: none !important; }
+
+  /* Hide Gerar Quotas submenu link on mobile (scoped to the menu) */
+  #menu a[href$="gerar_quotas.php"],
+  #menu.open a[href$="gerar_quotas.php"] {
+    display: none !important;
+  }
+
+  /* when menu open, show vertical panel */
+  #menu.open { flex-direction: column; align-items: stretch; background-color: var(--color-bg-navbar); padding: 0.5rem; }
+  #menu.open .dropdown { display: block; }
+  #menu.open .dropdown .dropbtn { width: 100%; text-align: left; padding: 12px 16px; background: transparent; border: none; color: #fff; }
+  #menu.open .dropdown .dropdown-content { position: static; background-color: transparent; box-shadow: none; min-width: 100%; }
+  #menu.open .dropdown .dropdown-content a { color: #fff; padding-left: 32px; }
+
+  /* Session menu styling for mobile: make it more prominent and readable */
+  #menu.open .session-menu {
+    display: none !important; /* Hide original session menu */
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 600;
+  }
+  
+  #menu.open .session-menu a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  #menu.open a { display: block; color: #fff; padding: 8px 16px; }
+
+  .dropbtn i { margin-left: 8px; }
+
+  #menu.open .navbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+    display: flex;
+    gap: 0;
+  }
+  #menu.open .navbar > * {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+  #menu.open .dropdown {
+    display: block;
+    width: 100%;
+  }
+  #menu.open .dropdown .dropbtn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    display: block;
+  }
+  #menu.open .dropdown .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    min-width: 100%;
+    width: 100%;
+    display: block;
+  }
+  #menu.open .dropdown .dropdown-content a {
+    color: #fff;
+    padding-left: 32px;
+    display: block;
+    width: 100%;
+  }
+  #menu.open .navbar-home {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  /* Submenus colapsados por padrão no mobile */
+  #menu.open .dropdown .dropdown-content {
+    display: none;
+  }
+  #menu.open .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  #menu.open .dropdown .dropdown-content {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #menu.open .dropdown.open .dropdown-content {
+    max-height: 500px;
+    opacity: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s;
+  }
+
+  .menu-logo-mobile {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 38px;
+  }
+
+  #menu.open .menu-logo-mobile {
+    display: none;
+  }
+
+  #menu.open .hide {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  
+  h1 { font-size: 1.4rem; }
+
+  .login {
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  input, textarea, select {
+    font-size: 0.95rem;
+    width: 100%;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .container form[method="get"] {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  #menu { padding: 8px; }
+  .dropdown-content { min-width: 140px; left: auto; right: 0; }
+
+  .col-small, .col-medium, .col-actions { width: auto; }
+  table { font-size: 0.8em; }
+}
+
+
+@media screen and (min-width: 769px) {
+  .menu-toggle { display: none; }
+}
+
+
+/* === BACK TO TOP === */
+
+.voltar-topo-btn {
+  position: fixed;
+  bottom: 65px;
+  right: 35px;
+  z-index: 9999;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.voltar-topo-btn:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+/* Styles para a página de backup admin/backup.php */
+.backup-box{
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Pequeno ajuste para o botão de download na página de backup */
+.backup-box .section_button{ display: inline-block; }
+
+
+
